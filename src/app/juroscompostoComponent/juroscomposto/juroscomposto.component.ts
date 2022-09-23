@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-juroscomposto',
   templateUrl: './juroscomposto.component.html',
-  styleUrls: ['./juroscomposto.component.css']
+  styleUrls: ['./juroscomposto.component.css'],
 })
 export class JuroscompostoComponent implements OnInit {
+  @Input() M: String;
+  @Input() c: String;
+  @Input() i: String;
+  @Input() t: String;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  getJurosComp() {
+    return Number(this.c) * (1 * Number(this.i)) ** Number(this.t);
   }
-
 }
